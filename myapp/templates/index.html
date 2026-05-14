@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Purchase Prediction</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', sans-serif; background: #f0f2f5; }
+        .navbar { background: #1a1a2e; color: white; padding: 15px 30px; display: flex; justify-content: space-between; align-items: center; }
+        .navbar h2 { color: #e94560; font-size: 1.1rem; }
+        .navbar a { color: #ccc; text-decoration: none; margin-left: 20px; font-size: 0.9rem; }
+        .navbar a:hover { color: white; }
+        .hero { background: linear-gradient(135deg, #1a1a2e, #16213e); color: white; padding: 80px 40px; text-align: center; }
+        .hero h1 { font-size: 2.2rem; margin-bottom: 20px; color: #e94560; }
+        .hero p { font-size: 1.1rem; max-width: 700px; margin: 0 auto 30px; color: #ccc; line-height: 1.7; }
+        .btn { display: inline-block; padding: 12px 30px; background: #e94560; color: white; border-radius: 5px; text-decoration: none; font-weight: bold; }
+        .btn:hover { background: #c73652; }
+        .stats { display: flex; justify-content: center; gap: 40px; padding: 40px; flex-wrap: wrap; }
+        .stat-card { background: white; padding: 30px; border-radius: 10px; text-align: center; box-shadow: 0 2px 10px rgba(0,0,0,0.1); min-width: 150px; }
+        .stat-card h3 { font-size: 2rem; color: #e94560; }
+        .stat-card p { color: #666; font-size: 0.9rem; margin-top: 5px; }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <h2>🛒 Customer Purchase Prediction</h2>
+        <div>
+            <a href="/login/">User Login</a>
+            <a href="/adminlogin/">Admin Login</a>
+            <a href="/register/">Create Account</a>
+        </div>
+    </div>
+    <div class="hero">
+        <h1>Customer Purchase Decision Prediction</h1>
+        <p>Predict whether a customer will purchase a product on an e-commerce platform using Machine Learning models — Random Forest, Decision Tree, and Logistic Regression — with a focus on discount-related features.</p>
+        <a href="/register/" class="btn">Get Started</a>
+    </div>
+    <div class="stats">
+        <div class="stat-card"><h3>99.45%</h3><p>Model Accuracy</p></div>
+        <div class="stat-card"><h3>0.9998</h3><p>ROC-AUC Score</p></div>
+        <div class="stat-card"><h3>7M+</h3><p>Records Trained</p></div>
+        <div class="stat-card"><h3>50%+</h3><p>Discount Feature Impact</p></div>
+    </div>
+</body>
+</html>

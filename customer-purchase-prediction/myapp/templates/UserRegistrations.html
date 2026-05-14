@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register | Purchase Prediction</title>
+    <style>
+        * { margin:0; padding:0; box-sizing:border-box; }
+        body { font-family:'Segoe UI',sans-serif; background:#f0f2f5; }
+        .navbar { background:#1a1a2e; color:white; padding:15px 30px; display:flex; justify-content:space-between; }
+        .navbar h2 { color:#e94560; }
+        .navbar a { color:#ccc; text-decoration:none; margin-left:20px; }
+        .container { max-width:500px; margin:50px auto; background:white; padding:40px; border-radius:10px; box-shadow:0 2px 15px rgba(0,0,0,0.1); }
+        h2 { text-align:center; color:#1a1a2e; margin-bottom:25px; }
+        input { width:100%; padding:10px; margin:8px 0; border:1px solid #ddd; border-radius:5px; font-size:0.95rem; }
+        button { width:100%; padding:12px; background:#e94560; color:white; border:none; border-radius:5px; font-size:1rem; cursor:pointer; margin-top:10px; }
+        button:hover { background:#c73652; }
+        .msg { background:#d4edda; color:#155724; padding:10px; border-radius:5px; margin-bottom:15px; text-align:center; }
+        a { color:#e94560; }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <h2>🛒 Purchase Prediction</h2>
+        <div><a href="/">Home</a><a href="/login/" style="margin-left:20px">Login</a></div>
+    </div>
+    <div class="container">
+        <h2>Create Account</h2>
+        {% if messages %}{% for msg in messages %}<div class="msg">{{ msg }}</div>{% endfor %}{% endif %}
+        <form method="POST">
+            {% csrf_token %}
+            <input type="text" name="name" placeholder="Full Name" required>
+            <input type="text" name="loginid" placeholder="Login ID" required>
+            <input type="password" name="password" placeholder="Password" required>
+            <input type="text" name="mobile" placeholder="Mobile Number" required>
+            <input type="email" name="email" placeholder="Email Address" required>
+            <input type="text" name="locality" placeholder="Locality" required>
+            <input type="text" name="address" placeholder="Address" required>
+            <input type="text" name="city" placeholder="City" required>
+            <input type="text" name="state" placeholder="State" required>
+            <button type="submit">Register</button>
+        </form>
+        <p style="text-align:center;margin-top:15px">Already have an account? <a href="/login/">Login here</a></p>
+    </div>
+</body>
+</html>

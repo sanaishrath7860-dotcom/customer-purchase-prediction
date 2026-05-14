@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Predict | Purchase Prediction</title>
+    <style>
+        * { margin:0; padding:0; box-sizing:border-box; }
+        body { font-family:'Segoe UI',sans-serif; background:#f0f2f5; display:flex; }
+        .sidebar { width:220px; min-height:100vh; background:#1a1a2e; padding:20px; }
+        .sidebar h3 { color:#e94560; margin-bottom:30px; font-size:1rem; }
+        .sidebar a { display:block; color:#ccc; text-decoration:none; padding:10px; border-radius:5px; margin-bottom:5px; }
+        .sidebar a:hover { background:#16213e; color:white; }
+        .main { flex:1; padding:40px; }
+        .card { background:white; padding:30px; border-radius:10px; box-shadow:0 2px 10px rgba(0,0,0,0.1); max-width:600px; }
+        h2 { color:#1a1a2e; margin-bottom:20px; }
+        label { display:block; color:#555; margin:10px 0 4px; font-size:0.9rem; }
+        input, select { width:100%; padding:10px; border:1px solid #ddd; border-radius:5px; font-size:0.95rem; }
+        button { width:100%; padding:12px; background:#e94560; color:white; border:none; border-radius:5px; font-size:1rem; cursor:pointer; margin-top:15px; }
+        button:hover { background:#c73652; }
+        .result { margin-top:20px; padding:20px; border-radius:8px; text-align:center; font-size:1.2rem; font-weight:bold; }
+        .likely { background:#d4edda; color:#155724; }
+        .unlikely { background:#f8d7da; color:#721c24; }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <h3>🛒 Customer's Purchasing</h3>
+        <a href="/home/">🏠 Home</a>
+        <a href="/train/">🤖 Training</a>
+        <a href="/predict/">📊 Prediction</a>
+        <a href="/login/">🚪 Logout</a>
+    </div>
+    <div class="main">
+        <div class="card">
+            <h2>📊 Make a Prediction</h2>
+            {% if messages %}{% for msg in messages %}<p style="color:red">{{ msg }}</p>{% endfor %}{% endif %}
+            <form method="POST">
+                {% csrf_token %}
+                <label>Coupon Discount Level</label>
+                <select name="coupon">
+                    <option>No Discount</option><option>5%</option><option>10%</option><option>20%</option><option>30%</option>
+                </select>
+                <label>Quantity Discount Level</label>
+                <select name="quantity">
+                    <option>No Discount</option><option>Buy 2 Get 1</option><option>Buy 3 Get 2</option>
+                </select>
+                <label>Time on Page (seconds)</label>
+                <input type="number" name="time" placeholder="e.g. 120" required>
+                <label>Added to Cart</label>
+                <select name="cart"><option>Yes</option><option>No</option></select>
+                <label>Time of Interaction</label>
+                <select name="interaction"><option>Morning</option><option>Afternoon</option><option>Evening</option><option>Night</option></select>
+                <label>Device</label>
+                <select name="device"><option>Mobile</option><option>Desktop</option><option>Tablet</option></select>
+                <label>Product Price ($)</label>
+                <input type="number" step="0.01" name="price" placeholder="e.g. 49.99" required>
+                <label>Product Rating (stars)</label>
+                <input type="number" step="0.1" min="1" max="5" name="rating" placeholder="e.g. 4.2" required>
+                <button type="submit">Predict</button>
+            </form>
+            {% if prediction %}
+            <div class="result {% if 'Likely' in prediction %}likely{% else %}unlikely{% endif %}">
+                {{ prediction }}<br>
+                <small>Purchase Probability: {{ probability }}%</small>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>
