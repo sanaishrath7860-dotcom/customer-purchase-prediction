@@ -12,13 +12,13 @@ A full-stack machine learning web application that predicts whether a customer w
 ## 📸 Screenshots
 
 ### 🏠 Home Dashboard
-![Home Dashboard](home_dashboard.png)
+![Home Dashboard](images/home_dashboard.png)
 ### 📊 Model Training Results
-![Model Training](model_training.png)
+![Model Training](images/model_training.png)
 ### 🎯 Prediction Page
-![Prediction Page](prediction_page.png)
+![Prediction Page](images/prediction_page.png)
 ### ✅ Prediction Result
-![Prediction Result](prediction_result.png)
+![Prediction Result](images/prediction_result.png)
 ## 🛠 Tech Stack
 - **Backend:** Python, Django
 - **ML:** scikit-learn, Random Forest, Decision Tree, Logistic Regression
