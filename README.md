@@ -12,29 +12,12 @@ A full-stack machine learning web application that predicts whether a customer w
 ## 📸 Screenshots
 
 ### 🏠 Home Dashboard
-
-
 ![Home Dashboard](home_dasboard.png)
-
-
-
 ### 📊 Model Training Results
-
-
 ![Model Training](model_training.png)
-
-
-
 ### 🎯 Prediction Page
-
-
 ![Prediction Page](prediction_page.png)
-
-
-
 ### ✅ Prediction Result
-
-
 ![Prediction Result](prediction_result.png)
 ## 🛠 Tech Stack
 - **Backend:** Python, Django
