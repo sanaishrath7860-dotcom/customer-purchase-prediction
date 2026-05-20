@@ -12,7 +12,7 @@ A full-stack machine learning web application that predicts whether a customer w
 ## 📸 Screenshots
 
 ### 🏠 Home Dashboard
-![Home Dashboard](home_dasboard.png)
+![Home Dashboard](home_dashboard.png)
 ### 📊 Model Training Results
 ![Model Training](model_training.png)
 ### 🎯 Prediction Page
