@@ -9,7 +9,33 @@ A full-stack machine learning web application that predicts whether a customer w
 | ROC-AUC | **0.9998** |
 | Dataset Size | 7M+ records |
 | Top Feature Impact | >50% (discount levels) |
+## 📸 Screenshots
 
+### 🏠 Home Dashboard
+
+
+![Home Dashboard](home_dasboard.png)
+
+
+
+### 📊 Model Training Results
+
+
+![Model Training](model_training.png)
+
+
+
+### 🎯 Prediction Page
+
+
+![Prediction Page](prediction_page.png)
+
+
+
+### ✅ Prediction Result
+
+
+![Prediction Result](prediction_result.png)
 ## 🛠 Tech Stack
 - **Backend:** Python, Django
 - **ML:** scikit-learn, Random Forest, Decision Tree, Logistic Regression
