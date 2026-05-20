@@ -53,7 +53,8 @@ python manage.py runserver
 
 Then open `http://127.0.0.1:8000` in your browser.
 
-**Admin login:** ID: `admin` | Password: `admin123`
+**Admin login:** Create a superuser by running:
+```python manage.py createsuperuser```
 
 ## 📁 Project Structure
 ```
